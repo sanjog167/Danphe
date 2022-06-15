@@ -1,0 +1,163 @@
+.p1, .p2, .p3, .p4{
+    background-color: lightgray;
+    height: 100vh;
+}
+
+.rect{
+    background-color: white;
+    width: 500px; 
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+}
+
+.circle{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.circle::before{
+    position: absolute;
+    content: '';
+    background: white;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.circle::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: -13px;
+    width: 10px;
+    height: 11px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 35px solid #fff;
+    bottom: 10px;
+    transform: translate(-50%, 0);
+}
+
+.box1{
+    background-color: red;
+    width: 100%;
+    height: 200px;
+}
+
+.rect2{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 40px;
+}
+
+li{
+    list-style: none;
+    height: 40px;
+    color: blue;
+    padding-left: 10px;
+}
+
+ul li:nth-child(odd){
+    background-color: red;
+    color: white;
+}
+
+ul li:nth-child(4n){
+    background-color: green;
+    color: white;
+}
+
+.p4{
+    display: grid;
+    place-items: center;
+}
+
+.line{
+    width: 900px;
+    height: 2px;
+    background: red;
+    position: relative;
+}
+
+.line::after{
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    bottom: 16%;
+    left: 50%;
+    transform: translate(-50%, -16%);
+    border-radius: 50%;
+    animation: bounce 0.5s cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    from {
+        transform: translate3d(0, -180px, 0);
+    }
+    to {
+        transform: translate3d(0, 16px, 0);
+    }
+}
+
+
+.borderline{
+    border: 1px solid red;
+    width: 800px;
+    height: 600px;
+    position: relative;
+}
+
+.borderline_box{
+    width: 60px;
+    height: 60px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: hit 2s infinite ease-out;
+}
+
+@keyframes hit{
+    0%{
+        transform: translatex(0px) translatey(0px)
+    }
+
+    25%{
+        transform: translate(280px, -280px);
+    }
+
+    50%{
+        transform: translate(280px, -280px);
+    }
+
+    75%{
+        transform: translate(-490px, -580px);
+    }
+
+    
+    100%{
+        transform: translatex(0px) translatey(0px)
+    }
+
+
+
+}
+
